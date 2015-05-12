@@ -24,6 +24,7 @@ public class Conexao {
 		} catch (ClassNotFoundException ex) {
 			JOptionPane.showMessageDialog(null, "Nao encontrou o driver: "+ex.getMessage());
 		}
+		
 
 		return null;
 	}

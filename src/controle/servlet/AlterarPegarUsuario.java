@@ -40,7 +40,7 @@ public class AlterarPegarUsuario extends HttpServlet {
 			if(usuarioDAO.pegarUsuario(recebeId, usuarioVO)){
 				request.setAttribute("usuarioVO", usuarioVO);
 				//request.setAttribute("", arg1)
-				RequestDispatcher direcionar = request.getRequestDispatcher("visao/AlterarUsuario.jsp");
+				RequestDispatcher direcionar = request.getRequestDispatcher("AlterarUsuario.jsp");
 				direcionar.forward(request, response);
 			}
 			

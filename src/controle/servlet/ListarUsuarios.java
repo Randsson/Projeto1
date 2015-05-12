@@ -41,7 +41,7 @@ public class ListarUsuarios extends HttpServlet {
 		List<UsuarioVO> listaCompleta = new ArrayList<UsuarioVO>();
 		listaCompleta = new UsuarioDAO().listarTodosUsuarios();
 		request.setAttribute("listaCompleta", listaCompleta);
-		RequestDispatcher direcionar = request.getRequestDispatcher("visao/index.jsp");
+		RequestDispatcher direcionar = request.getRequestDispatcher("index.jsp");
 		direcionar.forward(request, response);
 	}
 

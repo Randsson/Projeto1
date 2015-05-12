@@ -50,12 +50,12 @@ public class AlterarSalvarUsuario extends HttpServlet {
 		UsuarioBO usuarioBO = new UsuarioBO();
 		boolean retorno = usuarioBO.validarUsuarioAlterado(usuarioVO);
 		if(retorno){
-			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios");
+			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios.jsp");
 			direcionar.forward(request, response);
 		}else{
 			erro="Dados em branco!";
 			request.setAttribute("erro", erro);
-			RequestDispatcher direcionar = request.getRequestDispatcher("visao/AlterarUsuario.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("AlterarUsuario.jsp");
 			direcionar.forward(request, response);
 		}
 	}

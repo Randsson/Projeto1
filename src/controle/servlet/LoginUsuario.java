@@ -43,12 +43,12 @@ public class LoginUsuario extends HttpServlet {
 		
 		UsuarioBO usuarioBO = new UsuarioBO();
 		if(usuarioBO.validarSenhaLogin(usuarioVO)){
-			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios");
+			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios.jsp");
 			direcionar.forward(request, response);
 		}else{
 			erro = "CPF ou senha errado!";
 			request.setAttribute("erro", erro);
-			RequestDispatcher direcionar = request.getRequestDispatcher("visao/Login.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("Login.jsp");
 			direcionar.forward(request, response); 
 		}
 		

@@ -16,7 +16,7 @@
  <c:import url="Visao/header.html"></c:import>
 
  
- <form class="form-horizontal"  action ="/Projeto1/LogionUsuario.jsp">
+ <form class="form-horizontal"  action ="/Projeto1/LoginUsuario">
  <fieldset align = "center">
   <legend>Login</legend>
   

@@ -49,12 +49,12 @@ public class CadastrarUsuarioServlet extends HttpServlet {
 		UsuarioBO usuarioBO = new UsuarioBO();
 		boolean retorno = usuarioBO.validarUsuario(usuarioVO);
 		if(retorno){
-			RequestDispatcher direcionar = request.getRequestDispatcher("visao/Login.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("Login.jsp");
 			direcionar.forward(request, response);
 		}else{
 			erro="CPF já cadastrado!";
 			request.setAttribute("erro", erro);
-			RequestDispatcher direcionar = request.getRequestDispatcher("visao/CadastroUsuario.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("CadastroUsuario.jsp");
 			direcionar.forward(request, response);
 		}
 	}

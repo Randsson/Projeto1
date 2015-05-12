@@ -15,8 +15,8 @@
 <body>
 	<c:import url="Visao/header.html"></c:import>
 
-	<form class="form-horizontal" action="Projeto1/CadastrarUsuarioServlet" method="post">
-	<fieldset align = "center">
+	<form class="form-horizontal" action="/Projeto1/CadastrarUsuarioServlet" method="post">
+	<fieldset  align = "center">
 	
 	<legend>Registrar-se</legend>
 
