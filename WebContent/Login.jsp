@@ -16,7 +16,7 @@
  <c:import url="Visao/header.html"></c:import>
 
  
- <form class="form-horizontal"  action ="/Projeto1/LoginUsuario">
+ <form class="form-horizontal"  action ="LoginUsuario">
  <fieldset align = "center">
   <legend>Login</legend>
   
@@ -39,11 +39,7 @@
     </div>
    </div>
    
-   
- 
-
-   
-   
+      
    <div class="control-group">
     <label class="control-label" for="submit"> </label>
     <div class="controls">

@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import modelo.bo.UsuarioBO;
-import modelo.vo.UsuarioVO;
+import modelo.bo.ImovelBO;
+import modelo.vo.ImovelVO;
 
 /**
- * Servlet implementation class CadastrarUsuarioServlet
+ * Servlet implementation class CadastrarImovelServlet
  */
-public class CadastrarUsuarioServlet extends HttpServlet {
+public class CadastrarImovelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CadastrarUsuarioServlet() {
+    public CadastrarImovelServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,27 +38,26 @@ public class CadastrarUsuarioServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UsuarioVO usuarioVO = new UsuarioVO();
+		ImovelVO imovelVO = new ImovelVO();
 		String erro = "";
 		
-		usuarioVO.setNome(request.getParameter("txtNome"));
-		usuarioVO.setCpf(request.getParameter("txtCpf"));
-		usuarioVO.setEndereco(request.getParameter("txtEndereco"));
-		usuarioVO.setSenha(request.getParameter("txtSenha"));
-		usuarioVO.setTipo(request.getParameter("tipo"));
+		imovelVO.setNome(request.getParameter("txtNome"));
+		imovelVO.setEstado(request.getParameter("txtEstado"));
+		imovelVO.setValor(request.getParameter("txtValor"));
+		imovelVO.setObs(request.getParameter("txtObs"));
+		imovelVO.setTipo(request.getParameter("tipo"));
+				
+	//System.out.println(imovelVO.getTipo());
 		
-		
-	//System.out.println(usuarioVO.getTipo());
-		
-		UsuarioBO usuarioBO = new UsuarioBO();
-		boolean retorno = usuarioBO.validarUsuario(usuarioVO);
+		ImovelBO imovelBO = new ImovelBO();
+		boolean retorno = imovelBO.validarCadastroImovel(imovelVO);
 		if(retorno){
-			RequestDispatcher direcionar = request.getRequestDispatcher("Login.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("VerImovel.jsp");
 			direcionar.forward(request, response);
 		}else{
-			erro="CPF já cadastrado!";
+			erro="Todas os campos devem ser preenchidos";
 			request.setAttribute("erro", erro);
-			RequestDispatcher direcionar = request.getRequestDispatcher("CadastroUsuario.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("CadastroImovel.jsp");
 			direcionar.forward(request, response);
 		}
 	}

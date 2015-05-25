@@ -10,7 +10,7 @@ public class UsuarioBO {
 	public boolean validarUsuario(UsuarioVO usuarioVO) {
 		// TODO Auto-generated method stub
 		if(usuarioVO.getEndereco() == ""|| usuarioVO.getNome() == ""||
-			usuarioVO.getCpf() == ""|| usuarioVO.getSenha() == ""){
+			usuarioVO.getCpf() == ""|| usuarioVO.getSenha() == "" || usuarioVO.getTipo() == ""){
 				return false;
 			}else if(usuarioDAO.verificaCpfCadastrado(usuarioVO)){
 				return false;	
@@ -29,7 +29,7 @@ public class UsuarioBO {
 	}
 	
 	public boolean validarSenhaLogin(UsuarioVO usuarioVO){
-		if(usuarioVO.getCpf() == ""|| usuarioVO.getSenha() == ""){
+		if(usuarioVO.getNome() == ""|| usuarioVO.getSenha() == ""){
 			return false;
 		}else if(usuarioDAO.verificaSenhaOk(usuarioVO)){
 			return true;

@@ -15,20 +15,21 @@
 <body>
 	<c:import url="Visao/header.html"></c:import>
 
-	<form class="form-horizontal" action="/Projeto1/CadastrarUsuarioServlet" method="post">
+	<form class="form-horizontal" action="CadastrarUsuarioServlet" method="post">
 	<fieldset  align = "center">
 	
 	<legend>Registrar-se</legend>
 
 	
 	<div class="control-group">
-		<label class="control-label" for="txtNome">Nome:</label>
+		<label class="control-label" for="nome">Nome:</label>
 		<div class="controls">
-			<input id="nome" name="nome" type="text" placeholder="insira nome"
+			<input id="nome" name="txtNome" type="text" placeholder="insira nome"
 				class="input-xlarge">
 
 		</div>
 	</div>
+	
 
 	
 	<div class="control-group">
@@ -49,6 +50,8 @@
 
 		</div>
 	</div>
+	
+	
 
 	
 	<div class="control-group">
@@ -60,18 +63,16 @@
 		</div>
 	</div>
 
+	 <div>
+	 <br> <h4>Você é:</h4>
+		 <label for= "cliente" >Cliente</label>
+  <input type="radio" name="tipo" id="1" value="1"><br>
+  <label for= "corretor" >Corretor</label>
+  <input type="radio" name= "tipo" id="2" value="2">
 	
-	/<!-- <div class="control-group">
-		<label class="control-label" for="sexo">Sexo:</label>
-		<div class="controls">
-			<label class="radio" for="sexo-0"> <input type="radio"
-				name="sexo" id="sexo-0" value="Masculino" checked="checked">
-				Masculino
-			</label> <label class="radio" for="sexo-1"> <input type="radio"
-				name="sexo" id="sexo-1" value="Feminino"> Feminino
 			</label>
 		</div>
-	</div> -->
+	</div> 
 
 	<!-- File Button -->
 	<div class="control-group" align = "center">

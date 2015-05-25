@@ -37,10 +37,10 @@ public class UsuarioDAO {
 	}
 	
 	public boolean verificaSenhaOk(UsuarioVO usuarioVO) {
-		String sql="SELECT * FROM usuario WHERE cpf = ? AND senha = ?";
+		String sql="SELECT * FROM usuario WHERE nome = ? AND senha = ?";
 		try{
 			PreparedStatement st = conexao.getConexao().prepareStatement(sql);
-			st.setString(1,  usuarioVO.getCpf());
+			st.setString(1,  usuarioVO.getNome());
 			st.setString(2, usuarioVO.getSenha());
 			ResultSet rs = st.executeQuery();
 			if(rs.next()){
@@ -75,8 +75,8 @@ public class UsuarioDAO {
 		}
 	}
 	public boolean cadastrarUsuario(UsuarioVO usuarioVO) {
-		String sql = "INSERT INTO usuario (nome, cpf, endereco, senha) " +
-				"VALUES (?,?,?,?)";
+		String sql = "INSERT INTO usuario (nome, cpf, endereco, senha, tipo) " +
+				"VALUES (?,?,?,?,?)";
 		
 		try{
 			PreparedStatement st = conexao.getConexao().prepareStatement(sql);
@@ -84,7 +84,8 @@ public class UsuarioDAO {
 			st.setString(2, usuarioVO.getCpf());
 			st.setString(3, usuarioVO.getEndereco());
 			st.setString(4, usuarioVO.getSenha());
-			
+			st.setString(5, usuarioVO.getTipo());
+				
 			st.execute();
 			return true;
 			
@@ -145,6 +146,7 @@ public class UsuarioDAO {
 				usuarioVO.setCpf(rs.getString("cpf"));
 				usuarioVO.setSenha(rs.getString("senha"));
 				usuarioVO.setEndereco(rs.getString("endereco"));
+				usuarioVO.setTipo(rs.getString("tipo"));
 				listaCompleta.add(usuarioVO);
 			}
 			return listaCompleta;
@@ -172,6 +174,7 @@ public class UsuarioDAO {
 				usuarioVO.setEndereco(rs.getString("endereco"));
 				usuarioVO.setNome(rs.getString("nome"));
 				usuarioVO.setSenha(rs.getString("senha"));
+				usuarioVO.setTipo(rs.getString("tipo"));
 				
 				//return true;
 			}

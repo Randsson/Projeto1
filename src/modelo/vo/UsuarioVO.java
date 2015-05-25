@@ -3,10 +3,12 @@ package modelo.vo;
 public class UsuarioVO {
 
 	private int id;
+	private String tipo;
 	private String nome;
 	private String cpf;
 	private String endereco;
 	private String senha;
+	
 	
 	public int getId() {
 		return id;
@@ -38,4 +40,11 @@ public class UsuarioVO {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 }

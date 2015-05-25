@@ -24,7 +24,7 @@
    <div class="control-group">
     <label class="control-label" for="nome">Digite o Nome do Imóvel:</label>
     <div class="controls">
-     <input id="nome" name="nome" type="text" placeholder="digite aqui"
+     <input id="nome" name="txtNome" type="text" placeholder="digite aqui"
       class="input-xlarge">
 
     </div>
@@ -33,7 +33,7 @@
    <div class="control-group">
     <label class="control-label" for="tipo">Tipo do Imóvel:</label>
     <div class="controls">
-     <select id="tipo" name="tipo" class="input-xlarge">
+     <select id="tipo" name="txtTipo" class="input-xlarge">
       <option>Apartamento</option>
       <option>Casa</option>
       <option>Lote</option>
@@ -48,10 +48,10 @@
     <div class="controls">
     
      <label class="radio" for="radio-0"> <input type="checkbox"
-      name="checkbox" id="checkboxSucess" value="Vender">
+      name="txtEstado" id="checkboxSucess" value="Vender">
       Vender
      </label> <label class="radio" for="radio-1"> <input type="checkbox"
-      name="checkbox" id="checkbox" value="Alugar"> Alugar
+      name="txtEstado" id="checkbox" value="Alugar"> Alugar
      </label>
       
     </div>
@@ -69,7 +69,7 @@
    <div class="control-group">
     <label class="control-label" for="text">Observações:</label>
     <div class="controls">
-     <textarea id="text" name="text"></textarea>
+     <textarea id="text" name="textObs"></textarea>
     </div>
    </div>
    

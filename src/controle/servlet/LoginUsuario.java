@@ -38,17 +38,19 @@ public class LoginUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UsuarioVO usuarioVO = new UsuarioVO();
 		String erro = "";
-		usuarioVO.setCpf(request.getParameter("txtCpf"));
+		
+		usuarioVO.setNome(request.getParameter("txtNome"));
 		usuarioVO.setSenha(request.getParameter("txtSenha"));
 		
 		UsuarioBO usuarioBO = new UsuarioBO();
+		
 		if(usuarioBO.validarSenhaLogin(usuarioVO)){
-			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("ListarUsuarios");
 			direcionar.forward(request, response);
 		}else{
-			erro = "CPF ou senha errado!";
+			erro = "Nome ou senha errado!";
 			request.setAttribute("erro", erro);
-			RequestDispatcher direcionar = request.getRequestDispatcher("Login.jsp");
+			RequestDispatcher direcionar = request.getRequestDispatcher("LoginUsuario");
 			direcionar.forward(request, response); 
 		}
 		
